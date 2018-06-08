@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+}
+footer {
+    margin: 2em auto 0 auto;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #31475e;
+    padding-top: 2em;
+    color: #31475e;
+}
+hr {
+    border: 1px solid #49d091;
+    margin: 20px 0;
+    clear: both;
+}
+table, th, td {
+    border: 1px solid #31475e;
+    border-collapse: collapse;
+}
+.logo {
+    float: left;
+    margin: 0 50px 50px 0;
+    height: 150px;
+}
+.vue-green {
+    color: #49d091;
+}
+h1, h2, p, body, .vue-gray {
+    color: #31475e;
+}
+h1 {
+    margin: 50px 0;
+}
+h2 {
+    cursor: pointer;
+}
+.bordered {
+    border: 1px solid #31475e;
+    padding: 10px;
+    margin: 10px 0;
+}
+.hidden {
+    display: none;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}

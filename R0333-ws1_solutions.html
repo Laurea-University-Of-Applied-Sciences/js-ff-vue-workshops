@@ -1,0 +1,121 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>R0333/WS1-Solutions</title>
+    <link rel="stylesheet" href="R0333.css">
+</head>
+<body>
+    <img src="img.png" alt="vue.js" class="logo"/>
+    <h1>R0333 - Project Web App Development with a Javascript Framework <br/> Vue.js: Workshop 1 - Basics / Solutions</h1>
+    <hr/>
+    <div id="exercise1">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 1 - Welcome message</h2>
+        <div v-show="isOpen">
+            <p>Create a Vue app to print a welcome message into the bordered box below.</p>
+            <div class="bordered"> {{ message }} </div>
+        </div>
+    </div>
+    <hr/>
+    <div id="exercise2">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Directives</h2>
+        <div v-show="isOpen">
+            <p>Try out some Vue directives:</p>
+            <h3>2a.) v-on</h3>
+            <p>When the button below is clicked, show/hide list Directives.</p>
+            <button v-on:click="show=!show">Toggle list</button>
+            <div class="bordered" v-bind:title="title">
+                <p>Here is the Directives list</p>
+                <transition name="fade">
+                    <ul v-if="show">
+                        <li>Apply some transition into this list with transition wrapper</li>
+                    </ul>
+                </transition>
+            </div>
+            <h3>2b.) v-bind</h3>
+            <p>Use v-bind to set...</p>
+            <ul>
+                <li>...the title for the bordered div above.</li>
+                <li>...the src and alt attributes for the image tag below.</li>
+            </ul>
+            <img v-bind:src="src" :alt="alt" height="150" />
+            <p>Read about the short hand for v-bind and refactor your v-binds to use the shorthand.</p>
+            <h3>2b.) Transition</h3>
+            <p>Add some transition in showing the list Directives.</p>
+            <h3>2c.) v-model</h3>
+            <p>Use v-model directive to create a two-way-binding between the input element txtName and span lblName.</p>
+            <div class="bordered">
+                <input id="txtName" v-model="name" placeholder="Name here">
+                <span id="lblName">{{ name }}</span>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div id="exercise3">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 3 - Conditionals</h2>
+        <div v-show="isOpen">
+            <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
+            <span v-if="morning" class="bordered">Good Morning</span>
+            <span v-else class="bordered">Good Evening</span>
+        </div>
+    </div>
+    <hr/>
+    <div id="exercise4">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Loops</h2>
+        <div v-show="isOpen">
+            <h3>4a.) loop an array</h3>
+            <p>Create an array of student names and print them in an unordered list</p>
+            <div class="bordered">
+                <ul>
+                    <li v-for="student in students">
+                        {{ student.name }}
+                    </li>
+                </ul>
+            </div>
+            <h3>4b.) loop n times</h3>
+            <p>Print out a table with 10 rows using v-for. Add a count number on each row.</p>
+            <div class="bordered">
+                <table>
+                    <tr v-for="count in count"><td>{{ count }} - Row here</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div id="exercise5">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Methods</h2>
+        <div v-show="isOpen">
+            <p>Create a simple method addOne that increments the value of the counter span. Method is called when button add-one is clicked.</p>
+            <div class="bordered">
+                <span>Value of the counter is: {{ counter }}</span>
+                <button id="add-one" v-on:click="addOne">Add one</button>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div id="exercise6">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Shopping list</h2>
+        <div v-show="isOpen">
+            <p>Create a simple shopping list where:</p>
+            <ul>
+                <li>user can add items</li>
+                <li>items are listed in an unordered list or table</li>
+            </ul>
+            <div class="bordered">
+                <h3>Shopping list</h3>
+                <ul>
+                    <li v-for="item in items">{{ item }}</li>
+                </ul>
+                <input v-model="newItem" id="name" type="text" placeholder="Item name here"/>
+                <button v-on:click="addItem" type="submit">Add item</button>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; Meija Lohiniva Laurea UAS</footer>
+    <!-- 1. Vue.js added here -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="R0333-ws1.js"></script>
+</body>
