@@ -14,7 +14,7 @@ var exercise2 = new Vue ({
         show: true,
         name: '',
         title: 'This is title from Vue.js',
-        src: 'img.png',
+        src: '../../vue_logo.png',
         alt: 'This is alternative text for the picture'
     }
 })
