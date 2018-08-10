@@ -32,56 +32,35 @@
     <div id="exercise2">
         <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Computed Properties</h2>
         <div v-show="isOpen">
-            <p>Create a simple calculator with computed properties. When a button is pressed, the first row will show what button has been pressed.</p>
+            <p>Create a simple workout sheet that uses computed properties to calculate weekly workout hours. You can try doing this either with variables for each weekday or with arrays.</p>
+            <p>Also add a weekly total on the last row.</p>
             <div class="bordered">
-                <table class="no-border">
+                <table>
                     <tr>
-                        <td colspan="3" height="20">
-                            {{calculation}}
-                        </td>
-                    <tr>
-                        <td>
-                            <button>7</button>
-                        </td>
-                        <td>
-                            <button>8</button>
-                        </td>
-                        <td>
-                            <button>9</button>
-                        </td>
-                    </tr>  
-                    <tr>
-                        <td>
-                            <button>4</button>
-                        </td>
-                        <td>
-                            <button>5</button>
-                        </td>
-                        <td>
-                            <button>6</button>
-                        </td>
+                        <th>Sport</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                        <th>Total</th>
                     </tr>
                     <tr>
-                        <td>
-                            <button>1</button>
-                        </td>
-                        <td>
-                            <button>2</button>
-                        </td>
-                        <td>
-                            <button>3</button>
-                        </td>
+                        <td>Running</td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>
-                            <button>+</button>
-                        </td>
-                        <td>
-                            <button>-</button>
-                        </td>
-                        <td>
-                            <button>=</button>
-                        </td>
+                        <td colspan="8"><strong>Week</strong></td>
+                        <td><strong></strong></td>
                     </tr>
                 </table>
             </div>

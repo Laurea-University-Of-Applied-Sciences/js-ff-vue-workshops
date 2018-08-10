@@ -10,10 +10,33 @@ var exercise2 = new Vue ({
     el: '#exercise2',
     data: {
         isOpen: false,
-        calculation: ''
+        runningMon: 0,
+        runningTue: 0,
+        runningWed: 0,
+        runningThu: 0,
+        runningFri: 0,
+        runningSat: 0,
+        runningSun: 0,
+        gym : [
+            { value: 0 },
+            { value: 0 },
+            { value: 0 },
+            { value: 0 },
+            { value: 0 },
+            { value: 0 },
+            { value: 0 }
+        ]
     },
     computed: {
-        calculation += 
+        runningTotal: function() {
+            return this.runningMon + this.runningTue + this.runningWed + this.runningThu + this.runningFri + this.runningSat + this.runningSun;
+        },
+        gymTotal : function() {
+            return this.gym.reduce((acc, item) => acc + item.value, 0);
+        },
+        weekTotal : function() {
+            return this.runningTotal + this.gymTotal;
+        }
     }
 })
 //code for exercise3
@@ -33,13 +56,6 @@ var exercise4 = new Vue({
 //code for exercise5
 var exercise5 = new Vue({
     el: '#exercise5',
-    data: {
-        isOpen: false
-    }
-})
-//code for exercise6
-var exercise6 = new Vue({
-    el: '#exercise6',
     data: {
         isOpen: false
     }

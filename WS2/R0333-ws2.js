@@ -28,9 +28,3 @@ var exercise5 = new Vue({
         isOpen: false
     }
 })
-var exercise6 = new Vue({
-    el: '#exercise6',
-    data: {
-        isOpen: false
-    }
-})
