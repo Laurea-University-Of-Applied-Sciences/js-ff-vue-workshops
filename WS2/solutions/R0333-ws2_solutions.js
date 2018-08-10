@@ -36,7 +36,16 @@ var exercise2 = new Vue ({
         },
         weekTotal : function() {
             return this.runningTotal + this.gymTotal;
-        }
+        },
+        status : function() {
+            if(this.weekTotal < 10) {
+                return 'poor';
+            } else if(this.weekTotal < 20) {
+                return 'intermediate';
+            } else {
+                return 'good';
+            }
+        }   
     }
 })
 //code for exercise3

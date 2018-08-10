@@ -33,7 +33,7 @@
         <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Computed Properties</h2>
         <div v-show="isOpen">
             <p>Create a simple workout sheet that uses computed properties to calculate weekly workout hours. You can try doing this either with variables for each weekday or with arrays.</p>
-            <p>Also add a weekly total on the last row.</p>
+            <p>Also add a weekly total on the last row. Print out text saying whether weekly total is on good level or not.</p>
             <div class="bordered">
                 <table>
                     <tr>
@@ -68,6 +68,7 @@
                         <td><strong>{{ weekTotal }}</strong></td>
                     </tr>
                 </table>
+                <p>Your workout effort this week: <strong>{{ status }}</strong></p>
             </div>
 
         </div>
