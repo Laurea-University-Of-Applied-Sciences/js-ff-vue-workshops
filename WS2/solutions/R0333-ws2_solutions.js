@@ -2,7 +2,18 @@
 var exercise1 = new Vue({
     el: '#exercise1',
     data: {
-        isOpen: false
+        isOpen: false,
+        text: '',
+        keyCount: 0,
+        enter: ''
+    },
+    methods: {
+        handleKeydown: function() {
+            this.keyCount = this.text.length;
+        },
+        enterClicked: function() {
+            this.enter = "Enter clicked";
+        }
     }
 })
 //code for exercise2
@@ -52,7 +63,42 @@ var exercise2 = new Vue ({
 var exercise3 = new Vue({
     el: '#exercise3',
     data: {
-        isOpen: false
+        isOpen: false,
+        results: [],
+        GBP: '',
+        USD: '',
+        amount: 0
+    },
+    methods: {
+        //using fetch
+        getRates: function() {
+            var app = this;
+            fetch('https://exchangeratesapi.io/api/latest?symbols=USD,GBP').then(function (response) { 
+                return response.json();
+            }).then(function (result) {
+				app.GBP = result.rates.GBP;
+                app.USD = result.rates.USD;
+			});
+        },
+        //using axios
+        getRates1: function() {
+            var app = this;
+            axios.get('https://exchangeratesapi.io/api/latest?symbols=USD,GBP').then(function(response) { 
+				app.GBP = response.data.rates.GBP;
+                app.USD = response.data.rates.USD;
+			});
+        }
+    },
+    computed: {
+        amountGBP: function() {
+            if(this.GBP == '') {
+                this.getRates();
+            }
+            return this.amount * this.GBP;
+        },
+        amountUSD: function() {
+            return this.amount * this.USD;
+        }
     }
 })
 //code for exercise4
@@ -65,6 +111,13 @@ var exercise4 = new Vue({
 //code for exercise5
 var exercise5 = new Vue({
     el: '#exercise5',
+    data: {
+        isOpen: false
+    }
+})
+//code for exercise6
+var exercise6 = new Vue({
+    el: '#exercise6',
     data: {
         isOpen: false
     }

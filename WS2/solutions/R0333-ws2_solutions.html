@@ -5,7 +5,7 @@
 	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>WS2/R0333</title>
+	<title>WS2/R0333 Solutions</title>
     <link rel="stylesheet" href="../../R0333.css">
         <link rel="icon" href="../../favicon.png" type="image/x-icon"/>
 </head>
@@ -22,9 +22,9 @@
                 <li>when enter is clicked, add a text "Enter clicked" into the enter span below.</li>
             </ul>
             <div class="bordered"> 
-                <textarea></textarea>
-                <span id="count"></span>
-                <span id="enter"></span>
+                <textarea @keyDown="handleKeydown()" v-model="text" @keyup.enter="enterClicked"></textarea>
+                <span id="count">{{ keyCount }}</span>
+                <p><span id="enter">{{ enter }}</span></p>
             </div>
         </div>
     </div>
@@ -73,9 +73,24 @@
 
         </div>
     </div>
+        <hr/>
+        <div id="exercise3">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 3 - AJAX</h2>
+            <div v-show="isOpen">
+                <p>Create a simple currency exchange calculator using a free exchange rate API (for example <a href="https://exchangeratesapi.io/" target="_blank">https://exchangeratesapi.io/).</a></p>
+                <div class="bordered">
+                    <button @click="getRates()">Get rates</button>
+                    <p>Current exchange rate for GBP: <strong>{{ GBP }}</strong></p>
+                    <p>Current exchange rate for USD: <strong>{{ USD }}</strong></p>
+                    <label>Price in EUR </label><input type="number" v-model="amount" enabled="ratesSet"></input>
+                    <p>Price {{ amount }} € = £{{ amountGBP }}</p>
+                    <p>Price {{ amount }} € = ${{ amountUSD }}</p>
+                </div>
+            </div>
+        </div>
     <hr/>
-    <div id="exercise3">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 3 - Components</h2>
+    <div id="exercise4">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Components</h2>
         <div v-show="isOpen">
             <p>Try out some Vue directives:</p>
             <div class="bordered">
@@ -83,15 +98,15 @@
         </div>
     </div>
     <hr/>
-    <div id="exercise4">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Mixins</h2>
+    <div id="exercise5">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Mixins</h2>
         <div v-show="isOpen">
             <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
         </div>
     </div>
     <hr/>
-    <div id="exercise5">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Custom Directives</h2>
+    <div id="exercise6">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Custom Directives</h2>
         <div v-show="isOpen">
             <p>Create an array of student names and print them in an unordered list</p>
             <div class="bordered">
@@ -101,5 +116,6 @@
     <footer>&copy; Meija Lohiniva Laurea UAS</footer>
     <!-- 1. Vue.js added here -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="R0333-ws2_solutions.js"></script>
 </body>
