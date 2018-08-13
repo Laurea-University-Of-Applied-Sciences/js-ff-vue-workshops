@@ -68,8 +68,23 @@
         </div>
     </div>
     <hr/>
-    <div id="exercise3">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 3 - Components</h2>
+        <div id="exercise3">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 3 - AJAX</h2>
+            <div v-show="isOpen">
+                <p>Create a simple currency exchange calculator using a free exchange rate API (for example <a href="https://exchangeratesapi.io/" target="_blank">https://exchangeratesapi.io/).</a></p>
+                <div class="bordered">
+                    <button>Get rates</button>
+                    <p>Current exchange rate for GBP: <strong></strong></p>
+                    <p>Current exchange rate for USD: <strong></strong></p>
+                    <label>Price in EUR </label><input type="number"></input>
+                    <p>Price  € = £</p>
+                    <p>Price  € = $</p>
+                </div>
+            </div>
+        </div>
+    <hr/>
+    <div id="exercise4">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Components</h2>
         <div v-show="isOpen">
             <p>Try out some Vue directives:</p>
             <div class="bordered">
@@ -77,15 +92,15 @@
         </div>
     </div>
     <hr/>
-    <div id="exercise4">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Mixins</h2>
+    <div id="exercise5">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Mixins</h2>
         <div v-show="isOpen">
             <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
         </div>
     </div>
     <hr/>
-    <div id="exercise5">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Custom Directives</h2>
+    <div id="exercise6">
+        <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Custom Directives</h2>
         <div v-show="isOpen">
             <p>Create an array of student names and print them in an unordered list</p>
             <div class="bordered">

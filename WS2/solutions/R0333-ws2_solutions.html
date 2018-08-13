@@ -82,7 +82,7 @@
                     <button @click="getRates()">Get rates</button>
                     <p>Current exchange rate for GBP: <strong>{{ GBP }}</strong></p>
                     <p>Current exchange rate for USD: <strong>{{ USD }}</strong></p>
-                    <label>Price in EUR </label><input type="number" v-model="amount" enabled="ratesSet"></input>
+                    <label>Price in EUR </label><input type="number" v-model="amount"></input>
                     <p>Price {{ amount }} € = £{{ amountGBP }}</p>
                     <p>Price {{ amount }} € = ${{ amountUSD }}</p>
                 </div>
