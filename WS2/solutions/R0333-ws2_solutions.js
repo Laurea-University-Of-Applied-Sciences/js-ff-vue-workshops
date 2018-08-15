@@ -1,3 +1,22 @@
+//code for exercise 4
+Vue.component('test-component', {
+    props: ['title', 'text'],
+    data: function () {
+        return {
+            hidden: false
+        }
+    },
+    template: '<div><h2>{{ title }}<button v-on:click="hidden=!hidden" class="left-margin">Toggle text.</button></h2><p v-show="!hidden">{{ text }}</p></div>'
+})
+Vue.component('exercise', {
+    props: ['number', 'title', 'text'],
+    data: function () {
+        return {
+            hidden: false
+        }
+    },
+    template: '<h2 v-on:click="isOpen = !isOpen">Exercise {{ number }} - {{ title }}</h2>'
+})
 //code for exercise1
 var exercise1 = new Vue({
     el: '#exercise1',

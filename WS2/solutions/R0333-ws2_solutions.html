@@ -13,103 +13,116 @@
     <img src="../../vue_logo.png" alt="vue.js" class="logo"/>
     <h1>R0333 - Project Web App Development with a JavaScript Framework <br/> Vue.js: Workshop 2 - Events, Components, Mixins, Custom Directives</h1>
     <hr/>
-    <div id="exercise1">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 1 - Events</h2>
-        <div v-show="isOpen">
-            <p>Create event handlers to textarea below to:</p>
-            <ul>
-                <li>count the characters entered and show count in count span below.</li>
-                <li>when enter is clicked, add a text "Enter clicked" into the enter span below.</li>
-            </ul>
-            <div class="bordered"> 
-                <textarea @keyDown="handleKeydown()" v-model="text" @keyup.enter="enterClicked"></textarea>
-                <span id="count">{{ keyCount }}</span>
-                <p><span id="enter">{{ enter }}</span></p>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div id="exercise2">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Computed Properties</h2>
-        <div v-show="isOpen">
-            <p>Create a simple workout sheet that uses computed properties to calculate weekly workout hours. You can try doing this either with variables for each weekday or with arrays.</p>
-            <p>Also add a weekly total on the last row. Print out text saying whether weekly total is on good level or not.</p>
-            <div class="bordered">
-                <table>
-                    <tr>
-                        <th>Sport</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                        <th>Sun</th>
-                        <th>Total</th>
-                    </tr>
-                    <tr>
-                        <td>Running</td>
-                        <td><input type="number" v-model.number="runningMon" /></td>
-                        <td><input type="number" v-model.number="runningTue" /></td>
-                        <td><input type="number" v-model.number="runningWed" /></td>
-                        <td><input type="number" v-model.number="runningThu" /></td>
-                        <td><input type="number" v-model.number="runningFri" /></td>
-                        <td><input type="number" v-model.number="runningSat" /></td>
-                        <td><input type="number" v-model.number="runningSun" /></td>
-                        <td> {{ runningTotal }}</td>
-                    </tr>
-                    <tr>
-                        <td>Gym</td>
-                        <td v-for="item in gym"><input type="number" v-model.number="item.value" /></td>
-                        <td> {{ gymTotal }}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="8"><strong>Week</strong></td>
-                        <td><strong>{{ weekTotal }}</strong></td>
-                    </tr>
-                </table>
-                <p>Your workout effort this week: <strong>{{ status }}</strong></p>
-            </div>
-
-        </div>
-    </div>
-        <hr/>
-        <div id="exercise3">
-            <h2 v-on:click="isOpen = !isOpen">Exercise 3 - AJAX</h2>
+    <div id="exercises">
+        <div id="exercise1">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 1 - Events</h2>
             <div v-show="isOpen">
-                <p>Create a simple currency exchange calculator using a free exchange rate API (for example <a href="https://exchangeratesapi.io/" target="_blank">https://exchangeratesapi.io/).</a></p>
-                <div class="bordered">
-                    <button @click="getRates()">Get rates</button>
-                    <p>Current exchange rate for GBP: <strong>{{ GBP }}</strong></p>
-                    <p>Current exchange rate for USD: <strong>{{ USD }}</strong></p>
-                    <label>Price in EUR </label><input type="number" v-model="amount"></input>
-                    <p>Price {{ amount }} € = £{{ amountGBP }}</p>
-                    <p>Price {{ amount }} € = ${{ amountUSD }}</p>
+                <p>Create event handlers to textarea below to:</p>
+                <ul>
+                    <li>count the characters entered and show count in count span below.</li>
+                    <li>when enter is clicked, add a text "Enter clicked" into the enter span below.</li>
+                </ul>
+                <div class="bordered"> 
+                    <textarea @keyDown="handleKeydown()" v-model="text" @keyup.enter="enterClicked"></textarea>
+                    <span id="count">{{ keyCount }}</span>
+                    <p><span id="enter">{{ enter }}</span></p>
                 </div>
             </div>
         </div>
-    <hr/>
-    <div id="exercise4">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Components</h2>
-        <div v-show="isOpen">
-            <p>Try out some Vue directives:</p>
-            <div class="bordered">
+        <hr/>
+        <div id="exercise2">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Computed Properties</h2>
+            <div v-show="isOpen">
+                <p>Create a simple workout sheet that uses computed properties to calculate weekly workout hours. You can try doing this either with variables for each weekday or with arrays.</p>
+                <p>Also add a weekly total on the last row. Print out text saying whether weekly total is on good level or not.</p>
+                <div class="bordered">
+                    <table>
+                        <tr>
+                            <th>Sport</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                            <th>Sun</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>Running</td>
+                            <td><input type="number" v-model.number="runningMon" /></td>
+                            <td><input type="number" v-model.number="runningTue" /></td>
+                            <td><input type="number" v-model.number="runningWed" /></td>
+                            <td><input type="number" v-model.number="runningThu" /></td>
+                            <td><input type="number" v-model.number="runningFri" /></td>
+                            <td><input type="number" v-model.number="runningSat" /></td>
+                            <td><input type="number" v-model.number="runningSun" /></td>
+                            <td> {{ runningTotal }}</td>
+                        </tr>
+                        <tr>
+                            <td>Gym</td>
+                            <td v-for="item in gym"><input type="number" v-model.number="item.value" /></td>
+                            <td> {{ gymTotal }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><strong>Week</strong></td>
+                            <td><strong>{{ weekTotal }}</strong></td>
+                        </tr>
+                    </table>
+                    <p>Your workout effort this week: <strong>{{ status }}</strong></p>
+                </div>
+
             </div>
         </div>
-    </div>
-    <hr/>
-    <div id="exercise5">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Mixins</h2>
-        <div v-show="isOpen">
-            <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
+            <hr/>
+            <div id="exercise3">
+                <h2 v-on:click="isOpen = !isOpen">Exercise 3 - AJAX</h2>
+                <div v-show="isOpen">
+                    <p>Create a simple currency exchange calculator using a free exchange rate API (for example <a href="https://exchangeratesapi.io/" target="_blank">https://exchangeratesapi.io/).</a></p>
+                    <div class="bordered">
+                        <button @click="getRates()">Get rates</button>
+                        <p>Current exchange rate for GBP: <strong>{{ GBP }}</strong></p>
+                        <p>Current exchange rate for USD: <strong>{{ USD }}</strong></p>
+                        <label>Price in EUR </label><input type="number" v-model="amount"></input>
+                        <p>Price {{ amount }} € = £{{ amountGBP }}</p>
+                        <p>Price {{ amount }} € = ${{ amountUSD }}</p>
+                    </div>
+                </div>
+            </div>
+        <hr/>
+        <div id="exercise4">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Components</h2>
+            <div v-show="isOpen">
+                <p>Create a simple component that:</p>
+                <ul>
+                    <li>has a property title that is printed in a h2 tag</li>
+                    <li>has a property text that is printed in a p tag</li>
+                    <li>has a button that toggles visibility of the p tag</li>
+                </ul>
+                <p>Add three of these components with different properties into the bordered box below.</p>
+                <div class="bordered">
+                    <test-component title="This is the first title" text="Lorem ipsum dolor sit amet"></test-component>
+                    <test-component title="This is the second title" text="Lorem ipsum dolor sit amet"></test-component>
+                    <test-component title="This is the third title" text="Lorem ipsum dolor sit amet"></test-component>
+                </div>
+            </div>
         </div>
-    </div>
-    <hr/>
-    <div id="exercise6">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Custom Directives</h2>
-        <div v-show="isOpen">
-            <p>Create an array of student names and print them in an unordered list</p>
-            <div class="bordered">
+        <hr/>
+        <!--<clickable-header number="4" title="Components" instructions="Create a clickable-header component and use it for clickable headers in this document."></clickable-header>-->
+        
+        <div id="exercise5">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Mixins</h2>
+            <div v-show="isOpen">
+                <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
+            </div>
+        </div>
+        <hr/>
+        <div id="exercise6">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Custom Directives</h2>
+            <div v-show="isOpen">
+                <p>Create an array of student names and print them in an unordered list</p>
+                <div class="bordered">
+                </div>
             </div>
         </div>
     </div>
