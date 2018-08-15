@@ -113,15 +113,22 @@
         <div id="exercise5">
             <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Mixins</h2>
             <div v-show="isOpen">
-                <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
+                <p>Create a log mixin that writes a line (time component was called and the name of the component) in console for each component called. Create three components that print out some content into the bordered box below of which one doesn't have its own name data.</p>
+                <div class="bordered">
+                    <mixin-component></mixin-component>
+                    <second-mixin-component></second-mixin-component>
+                    <mixin-component3></mixin-component3>
+                    <mixin-component4></mixin-component4>
+                </div>
             </div>
         </div>
         <hr/>
         <div id="exercise6">
             <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Custom Directives</h2>
             <div v-show="isOpen">
-                <p>Create an array of student names and print them in an unordered list</p>
-                <div class="bordered">
+                <p>Create a custom directive that changes the appearance of the bordered box below.</p>
+                <div class="bordered" v-red>
+                    <p>Lorem ipsum dolor sit amet</p>
                 </div>
             </div>
         </div>

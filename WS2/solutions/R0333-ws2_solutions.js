@@ -8,6 +8,66 @@ Vue.component('test-component', {
     },
     template: '<div><h2>{{ title }}<button v-on:click="hidden=!hidden" class="left-margin">Toggle text.</button></h2><p v-show="!hidden">{{ text }}</p></div>'
 })
+//code for exercise 5
+// define a mixin object
+var log = {
+    created: function () {
+        this.log()
+    },
+    data: function () {
+        return {
+            name: 'log',
+        }
+    },
+    methods: {
+        log: function () {
+            console.log(this.name + ' called ' + Date())
+        }
+    }
+}
+//code for exercise 6
+Vue.directive("red",{
+   bind(e1, binding, vnode) {
+      e1.style.backgroundColor = "red";
+   }
+});
+Vue.component('mixin-component', {
+    template: '<p>This is component</p>',
+    data: function () {
+        return {
+            name: 'mixin-component',
+        }
+    },
+    mixins: [log]
+})
+Vue.component('second-mixin-component', {
+    template: '<p>This is second component</p>',
+    data: function () {
+        return {
+            name: 'second-mixin-component',
+        }
+    },
+    mixins: [log]
+})
+Vue.component('mixin-component3', {
+    template: '<p>This is component 3</p>',
+    data: function () {
+        return {
+            name: 'mixin-component3',
+        }
+    },
+    mixins: [log]
+})
+Vue.component('mixin-component4', {
+    template: '<p>This is component 4</p>',
+    data: function () {
+        return {
+            name: 'mixin-component4',
+        }
+    },
+    mixins: [log]
+})
+
 Vue.component('exercise', {
     props: ['number', 'title', 'text'],
     data: function () {
