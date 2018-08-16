@@ -29,13 +29,17 @@ td, th {
 .vue-green {
     color: #49d091;
 }
-h1, h2, p, body, .vue-gray {
+h1, h2, h3, p, body, .vue-gray {
     color: #31475e;
 }
 h1 {
-    margin: 50px 0;
+    margin: 50px 0 0 0;
 }
 h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.5em;
     cursor: pointer;
 }
 .bordered {

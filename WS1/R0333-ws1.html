@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>WS1/R0333</title>
     <link rel="stylesheet" href="../R0333.css">
-        <link rel="icon" href="../favicon.png" type="image/x-icon"/>
+    <link rel="icon" href="../favicon.png" type="image/x-icon"/>
 </head>
 <body>
     <img src="../vue_logo.png" alt="vue.js" class="logo"/>
-    <h1>R0333 - Project Web App Development with a Javascript Framework <br/> Vue.js: Workshop 1 - Basics</h1>
+    <h1>R0333 - Project Web App Development with a Javascript Framework</h1>
+    <h2>Vue.js: Workshop 1 - Basics</h2>
     <hr/>
     <div id="exercise1">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 1 - Welcome message</h2>
+        <h3 v-on:click="isOpen = !isOpen">Exercise 1 - Welcome message</h3>
         <div v-show="isOpen">
             <p>Create a Vue app to print a welcome message into the bordered box below.</p>
             <div class="bordered"> 
@@ -23,10 +24,10 @@
     </div>
     <hr/>
     <div id="exercise2">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Directives</h2>
+        <h3 v-on:click="isOpen = !isOpen">Exercise 2 - Directives</h3>
         <div v-show="isOpen">
             <p>Try out some Vue directives:</p>
-            <h3>2a.) v-on</h3>
+            <h4>2a.) v-on</h4>
             <p>When the button below is clicked, show/hide list Directives.</p>
             <button>Toggle list</button>
             <div class="bordered">
@@ -35,7 +36,7 @@
                     <li>Apply some transition into this list with transition wrapper</li>
                 </ul>
             </div>
-            <h3>2b.) v-bind</h3>
+            <h4>2b.) v-bind</h4>
             <p>Use v-bind to set...</p>
             <ul>
                 <li>...the title for the bordered div above.</li>
@@ -43,9 +44,9 @@
             </ul>
             <img  />
             <p>Read about the short hand for v-bind and refactor your v-binds to use the shorthand.</p>
-            <h3>2b.) Transition</h3>
+            <h4>2b.) Transition</h4>
             <p>Add some transition in showing the list Directives.</p>
-            <h3>2c.) v-model</h3>
+            <h4>2c.) v-model</h4>
             <p>Use v-model directive to create a two-way-binding between the input element txtName and span lblName.</p>
             <div class="bordered">
                 <input id="txtName" placeholder="Name here">
@@ -55,7 +56,7 @@
     </div>
     <hr/>
     <div id="exercise3">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 3 - Conditionals</h2>
+        <h3 v-on:click="isOpen = !isOpen">Exercise 3 - Conditionals</h3>
         <div v-show="isOpen">
             <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
             <span class="bordered">Good Morning</span>
@@ -64,9 +65,9 @@
     </div>
     <hr/>
     <div id="exercise4">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Loops</h2>
+        <h3 v-on:click="isOpen = !isOpen">Exercise 4 - Loops</h3>
         <div v-show="isOpen">
-            <h3>4a.) loop an array</h3>
+            <h4>4a.) loop an array</h4>
             <p>Create an array of student names and print them in an unordered list</p>
             <div class="bordered">
                 <ul>
@@ -75,7 +76,7 @@
                     </li>
                 </ul>
             </div>
-            <h3>4b.) loop n times</h3>
+            <h4>4b.) loop n times</h4>
             <p>Print out a table with 10 rows using v-for. Add a count number on each row.</p>
             <div class="bordered">
                 <table>
@@ -86,7 +87,7 @@
     </div>
     <hr/>
     <div id="exercise5">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Methods</h2>
+        <h3 v-on:click="isOpen = !isOpen">Exercise 5 - Methods</h3>
         <div v-show="isOpen">
             <p>Create a simple method addOne that increments the value of the counter span. Method is called when button add-one is clicked.</p>
             <div class="bordered">
@@ -97,7 +98,7 @@
     </div>
     <hr/>
     <div id="exercise6">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Shopping list</h2>
+        <h3 v-on:click="isOpen = !isOpen">Exercise 6 - Shopping list</h3>
         <div v-show="isOpen">
             <p>Create a simple shopping list where:</p>
             <ul>
@@ -105,7 +106,7 @@
                 <li>items are listed in an unordered list</li>
             </ul>
             <div class="bordered">
-                <h3>Shopping list</h3>
+                <h4>Shopping list</h4>
                 <ul>
                     <li></li>
                 </ul>
