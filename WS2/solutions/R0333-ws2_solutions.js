@@ -152,7 +152,7 @@ var exercise3 = new Vue({
         //using fetch
         getRates: function() {
             var app = this;
-            fetch('https://exchangeratesapi.io/api/latest?symbols=USD,GBP').then(function (response) { 
+            fetch('https://api.exchangeratesapi.io/latest?symbols=USD,GBP').then(function (response) { 
                 return response.json();
             }).then(function (result) {
 				app.GBP = result.rates.GBP;
@@ -162,7 +162,7 @@ var exercise3 = new Vue({
         //using axios
         getRates1: function() {
             var app = this;
-            axios.get('https://exchangeratesapi.io/api/latest?symbols=USD,GBP').then(function(response) { 
+            axios.get('https://exchangeratesapi.io/latest?symbols=USD,GBP').then(function(response) { 
 				app.GBP = response.data.rates.GBP;
                 app.USD = response.data.rates.USD;
 			});
