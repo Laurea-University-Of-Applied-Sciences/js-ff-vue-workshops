@@ -1,120 +1,34 @@
 
 <!doctype html>
 <html lang="en">
-<head>
-	<!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>WS2/R0333</title>
-    <link rel="stylesheet" href="../R0333.css">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>WS3/R0333</title>
+        <link rel="stylesheet" href="../R0333.css">
         <link rel="icon" href="../favicon.png" type="image/x-icon"/>
-</head>
-<body>
-    <img src="../vue_logo.png" alt="vue.js" class="logo"/>
-    <h1>R0333 - Project Web App Development with a JavaScript Framework <br/> Vue.js: Workshop 2 - Events, Components, Mixins, Custom Directives</h1>
-    <hr/>
-    <div id="exercise1">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 1 - Events</h2>
-        <div v-show="isOpen">
-            <p>Create event handlers to textarea below to:</p>
-            <ul>
-                <li>count the characters entered and show count in count span below.</li>
-                <li>when enter is clicked, add a text "Enter clicked" into the enter span below.</li>
-            </ul>
-            <div class="bordered"> 
-                <textarea></textarea>
-                <span id="count"></span>
-                <span id="enter"></span>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div id="exercise2">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Computed Properties</h2>
-        <div v-show="isOpen">
-            <p>Create a simple workout sheet that uses computed properties to calculate weekly workout hours. You can try doing this either with variables for each weekday or with arrays.</p>
-            <p>Also add a weekly total on the last row. Print out text saying whether weekly total is on good level or not.</p>
-            <div class="bordered">
-                <table>
-                    <tr>
-                        <th>Sport</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                        <th>Sun</th>
-                        <th>Total</th>
-                    </tr>
-                    <tr>
-                        <td>Running</td>
-                        <td><input type="number" /></td>
-                        <td><input type="number" /></td>
-                        <td><input type="number" /></td>
-                        <td><input type="number" /></td>
-                        <td><input type="number" /></td>
-                        <td><input type="number" /></td>
-                        <td><input type="number" /></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="8"><strong>Week</strong></td>
-                        <td><strong></strong></td>
-                    </tr>
-                </table>
-                <p>Your workout effort this week: <strong></strong></p>
-            </div>
-        </div>
-    </div>
-    <hr/>
-        <div id="exercise3">
-            <h2 v-on:click="isOpen = !isOpen">Exercise 3 - AJAX</h2>
+    </head>
+    <body>
+        <img src="../vue_logo.png" alt="vue.js" class="logo"/>
+        <h1>R0333 - Project Web App Development with a JavaScript Framework <br/> Vue.js: Workshop 3 - Templates & Vue CLI</h1>
+        <hr/>
+        <div id="exercise1">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 1 - Templates</h2>
             <div v-show="isOpen">
-                <p>Create a simple currency exchange calculator using a free exchange rate API (for example <a href="https://exchangeratesapi.io/" target="_blank">https://exchangeratesapi.io/).</a></p>
-                <div class="bordered">
-                    <button>Get rates</button>
-                    <p>Current exchange rate for GBP: <strong></strong></p>
-                    <p>Current exchange rate for USD: <strong></strong></p>
-                    <label>Price in EUR </label><input type="number"></input>
-                    <p>Price  € = £</p>
-                    <p>Price  € = $</p>
-                </div>
+                <p>Change the structure of this HTML document so that you have following components: header, footer and exercise. Implement these as new Vue.js components. Experiment with different templating styles; try at least three different ways of creating templates.</p>
             </div>
         </div>
-    <hr/>
-    <div id="exercise4">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 4 - Components</h2>
-        <div v-show="isOpen">
-            <p>Create a simple component that:</p>
-            <ul>
-                <li>has a property title that is printed in a h2 tag</li>
-                <li>has a property text that is printed in a p tag</li>
-                <li>has a button that toggles visibility of the p tag</li>
-            </ul>
-            <p>Add three of these components with different properties into the bordered box below.</p>
-            <div class="bordered">
+        <hr/>
+        <div id="exercise2">
+            <h2 v-on:click="isOpen = !isOpen">Exercise 2 - Vue CLI</h2>
+            <div v-show="isOpen">
+                <p>Create a full on Vue.js project with Vue CLI. Use Vue CLI to create this exercise document using single file components.</p>
             </div>
         </div>
-    </div>
-    <hr/>
-    <div id="exercise5">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 5 - Mixins</h2>
-        <div v-show="isOpen">
-            <p>Create a log mixin that writes a line (time component was called and the name of the component) in console for each component called. Create three components that print out some content into the bordered box below of which one doesn't have its own name data.</p>
-        </div>
-    </div>
-    <hr/>
-    <div id="exercise6">
-        <h2 v-on:click="isOpen = !isOpen">Exercise 6 - Custom Directives</h2>
-        <div v-show="isOpen">
-            <p>Create a custom directive that changes the appearance of the bordered box below.</p>
-            <div class="bordered">
-            </div>
-        </div>
-    </div>
-    <footer>&copy; Meija Lohiniva Laurea UAS</footer>
-    <!-- 1. Vue.js added here -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="R0333-ws2.js"></script>
-</body>
+        <footer>&copy; Meija Lohiniva Laurea UAS</footer>
+        <!-- 1. Vue.js added here -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="R0333-ws3.js"></script>
+    </body>
+</html>

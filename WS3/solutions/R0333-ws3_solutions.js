@@ -1,5 +1,6 @@
 Vue.component('wsHeader', {
     props: ['number', 'title'],
+    //render function template
     render(createElement) {
         return createElement(
             'div',
@@ -25,6 +26,7 @@ Vue.component('wsHeader', {
     }
 })
 Vue.component('wsFooter', {
+    //Simple string template
     template: '<footer>&copy; Meija Lohiniva Laurea UAS</footer>'
 })
 Vue.component('exercise', {
@@ -34,13 +36,14 @@ Vue.component('exercise', {
             isOpen: false
         }
     },
+    //template literal template
     template: `<div><hr/>
                 <div :id="'exercise' + number">
                 <h3 v-on:click="isOpen = !isOpen">Exercise {{ number }} - {{ title }}</h3>
                 <div v-show="isOpen">
                     <p>{{ instructions }}</p>
                     <div class="bordered">
-                        {{ content}}
+                        <i>{{ content}}</i>
                     </div>
                 </div>
             </div></div>`

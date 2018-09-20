@@ -10,27 +10,3 @@ var exercise2 = new Vue ({
         isOpen: false
     }
 })
-var exercise3 = new Vue({
-    el: '#exercise3',
-    data: {
-        isOpen: false
-    }
-})
-var exercise4 = new Vue({
-    el: '#exercise4',
-    data: {
-        isOpen: false
-    }
-})
-var exercise5 = new Vue({
-    el: '#exercise5',
-    data: {
-        isOpen: false
-    }
-})
-var exercise6 = new Vue({
-    el: '#exercise6',
-    data: {
-        isOpen: false
-    }
-})
