@@ -1,123 +1,126 @@
 
 <!doctype html>
 <html lang="en">
-<head>
-	<!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>WS1-Solutions/R0333</title>
-    <link rel="stylesheet" href="../../R0333.css">
-    <link rel="icon" href="../../favicon.png" type="image/x-icon"/>
-</head>
-<body>
-    <img src="../../vue_logo.png" alt="vue.js" class="logo"/>
-    <h1>R0333 - Project Web App Development with a Javascript Framework</h1>
-    <h2>Vue.js: Workshop 1 - Basics / Solutions</h2>
-    <hr/>
-    <div id="exercise1">
-        <h3 v-on:click="isOpen = !isOpen">Exercise 1 - Welcome message</h3><!--click toggles value of variable isOpen-->
-        <div v-show="isOpen"><!-- show if isOpen is true-->
-            <p>Create a Vue app to print a welcome message into the bordered box below.</p>
-            <div class="bordered"> {{ message }} </div><!-- message variable that has welcome message -->
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>WS1-Solutions/R0333</title>
+        <link rel="stylesheet" href="../../R0333.css">
+        <link rel="icon" href="../../favicon.png" type="image/x-icon"/>
+    </head>
+    <body>
+        <img src="../../vue_logo.png" alt="vue.js" class="logo"/>
+        <h1>R0333 - Project Web App Development with a Javascript Framework</h1>
+        <h2>Vue.js: Workshop 1 - Basics / Solutions</h2>
+        <hr/>
+        <div id="exercise1">
+            <h3 v-on:click="isOpen = !isOpen">Exercise 1 - Welcome message</h3><!--click toggles value of variable isOpen-->
+            <div v-show="isOpen"><!-- show if isOpen is true-->
+                <p>Create a Vue app to print a welcome message into the bordered box below.</p>
+                <div class="bordered"> {{ message }} </div><!-- message variable that has welcome message -->
+            </div>
         </div>
-    </div>
-    <hr/>
-    <div id="exercise2">
-        <h3 v-on:click="isOpen = !isOpen">Exercise 2 - Directives</h3> <!--click toggles value of variable isOpen-->
-        <div v-show="isOpen"> <!-- show if isOpen is true-->
-            <p>Try out some Vue directives:</p>
-            <h4>2a.) v-on</h4>
-            <p>When the button below is clicked, show/hide list Directives.</p>
-            <button v-on:click="show=!show">Toggle list</button><!-- toggle value of variable show-->
-            <div class="bordered" v-bind:title="title"><!-- bind title into the variable title-->
-                <p>Here is the Directives list</p>
-                <transition name="fade"><!-- create fade transition-->
-                    <ul v-if="show"><!-- show if variable show is true-->
-                        <li>Apply some transition into this list with transition wrapper</li>
+        <hr/>
+        <div id="exercise2">
+            <h3 v-on:click="isOpen = !isOpen">Exercise 2 - Directives</h3> <!--click toggles value of variable isOpen-->
+            <div v-show="isOpen"> <!-- show if isOpen is true-->
+                <p>Try out some Vue directives:</p>
+                <h4>2a.) v-on</h4>
+                <p>When the button below is clicked, show/hide list Directives.</p>
+                <button v-on:click="show=!show">Toggle list</button><!-- toggle value of variable show-->
+                <div class="bordered" v-bind:title="title"><!-- bind title into the variable title-->
+                    <p>Here is the Directives list</p>
+                    <transition name="fade"><!-- create fade transition-->
+                        <ul v-if="show"><!-- show if variable show is true-->
+                            <li>Apply some transition into this list with transition wrapper</li>
+                        </ul>
+                    </transition>
+                </div>
+                <h4>2b.) v-bind</h4>
+                <p>Use v-bind to set...</p>
+                <ul>
+                    <li>...the title for the bordered div above.</li>
+                    <li>...the src and alt attributes for the image tag below.</li>
+                </ul>
+                <img v-bind:src="src" :alt="alt" height="150" /><!-- bind src into the src variable and alt into the alt variable-->
+                <p>Read about the short hand for v-bind and refactor your v-binds to use the shorthand.</p>
+                <h4>2b.) Transition</h4>
+                <p>Add some transition in showing the list Directives.</p>
+                <h4>2c.) v-model</h4>
+                <p>Use v-model directive to create a two-way-binding between the input element txtName and span lblName.</p>
+                <div class="bordered">
+                    <input id="txtName" v-model="name" placeholder="Name here"><!-- create a two way binding name-->
+                    <span id="lblName">{{ name }}</span><!-- print out variable name's value-->
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div id="exercise3">
+            <h3 v-on:click="isOpen = !isOpen">Exercise 3 - Conditionals</h3><!-- toggle value of isOpen-->
+            <div v-show="isOpen"><!-- show if isOpen is true-->
+                <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
+                <span v-if="morning" class="bordered">Good Morning</span><!-- show if morning is true-->
+                <span v-else class="bordered">Good Evening</span><!-- show if morning is false-->
+            </div>
+        </div>
+        <hr/>
+        <div id="exercise4">
+            <h3 v-on:click="isOpen = !isOpen">Exercise 4 - Loops</h3><!-- toggle value of isOpen-->
+            <div v-show="isOpen"><!-- show if isOpen is true-->
+                <h4>4a.) loop an array</h4>
+                <p>Create an array of student names and print them in an unordered list</p>
+                <div class="bordered">
+                    <ul>
+                        <li v-for="student in students"><!-- create a for loop to loop through array of students, student is the iterator variable (current student)-->
+                            {{ student.name }} <!-- print out the name property of the current student-->
+                        </li>
                     </ul>
-                </transition>
-            </div>
-            <h4>2b.) v-bind</h4>
-            <p>Use v-bind to set...</p>
-            <ul>
-                <li>...the title for the bordered div above.</li>
-                <li>...the src and alt attributes for the image tag below.</li>
-            </ul>
-            <img v-bind:src="src" :alt="alt" height="150" /><!-- bind src into the src variable and alt into the alt variable-->
-            <p>Read about the short hand for v-bind and refactor your v-binds to use the shorthand.</p>
-            <h4>2b.) Transition</h4>
-            <p>Add some transition in showing the list Directives.</p>
-            <h4>2c.) v-model</h4>
-            <p>Use v-model directive to create a two-way-binding between the input element txtName and span lblName.</p>
-            <div class="bordered">
-                <input id="txtName" v-model="name" placeholder="Name here"><!-- create a two way binding name-->
-                <span id="lblName">{{ name }}</span><!-- print out variable name's value-->
+                </div>
+                <h4>4b.) loop n times</h4>
+                <p>Print out a table with 10 rows using v-for. Add a count number on each row.</p>
+                <div class="bordered">
+                    <table>
+                        <tr v-for="count in count"><td>{{ count }} - Row here</td></tr><!-- create a for loop that loops through the number of times determined by the value of variable count-->
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <hr/>
-    <div id="exercise3">
-        <h3 v-on:click="isOpen = !isOpen">Exercise 3 - Conditionals</h3><!-- toggle value of isOpen-->
-        <div v-show="isOpen"><!-- show if isOpen is true-->
-            <p>Check what time of the day it is and if it's before noon, print out "Good morning", otherwise print out "Good Evening"</p>
-            <span v-if="morning" class="bordered">Good Morning</span><!-- show if morning is true-->
-            <span v-else class="bordered">Good Evening</span><!-- show if morning is false-->
+        <hr/>
+        <div id="exercise5">
+            <h3 v-on:click="isOpen = !isOpen">Exercise 5 - Methods</h3><!-- toggle value of isOpen-->
+            <div v-show="isOpen"><!-- show if isOpen is true-->
+                <p>Create a simple method addOne that increments the value of the counter span. Method is called when button add-one is clicked.</p>
+                <div class="bordered">
+                    <span>Value of the counter is: {{ counter }}</span><!-- print out the value of counter variable-->
+                    <button id="add-one" v-on:click="addOne">Add one</button><!-- call method addOne on click-->
+                </div>
+            </div>
         </div>
-    </div>
-    <hr/>
-    <div id="exercise4">
-        <h3 v-on:click="isOpen = !isOpen">Exercise 4 - Loops</h3><!-- toggle value of isOpen-->
-        <div v-show="isOpen"><!-- show if isOpen is true-->
-            <h4>4a.) loop an array</h4>
-            <p>Create an array of student names and print them in an unordered list</p>
-            <div class="bordered">
+        <hr/>
+        <div id="exercise6">
+            <h3 v-on:click="isOpen = !isOpen">Exercise 6 - Shopping list</h3><!-- toggle value of isOpen variable-->
+            <div v-show="isOpen"><!-- show if isOpen is true-->
+                <p>Create a simple shopping list where:</p>
                 <ul>
-                    <li v-for="student in students"><!-- create a for loop to loop through array of students, student is the iterator variable (current student)-->
-                        {{ student.name }} <!-- print out the name property of the current student-->
-                    </li>
+                    <li>user can add items</li>
+                    <li>items are listed in an unordered list or table</li>
                 </ul>
-            </div>
-            <h4>4b.) loop n times</h4>
-            <p>Print out a table with 10 rows using v-for. Add a count number on each row.</p>
-            <div class="bordered">
-                <table>
-                    <tr v-for="count in count"><td>{{ count }} - Row here</td></tr><!-- create a for loop that loops through the number of times determined by the value of variable count-->
-                </table>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div id="exercise5">
-        <h3 v-on:click="isOpen = !isOpen">Exercise 5 - Methods</h3><!-- toggle value of isOpen-->
-        <div v-show="isOpen"><!-- show if isOpen is true-->
-            <p>Create a simple method addOne that increments the value of the counter span. Method is called when button add-one is clicked.</p>
-            <div class="bordered">
-                <span>Value of the counter is: {{ counter }}</span><!-- print out the value of counter variable-->
-                <button id="add-one" v-on:click="addOne">Add one</button><!-- call method addOne on click-->
+                <div class="bordered">
+                    <h4>Shopping list</h4>
+                    <ul>
+                        <li v-for="item in items">{{ item }}</li><!-- loop through items array. Item is the iterator variable (current item) -->
+                    </ul>
+                    <form v-on:submit.prevent="onSubmit"> <!-- Prevent form submit -> No page reload -->
+                        <input v-model="newItem" id="name" type="text" placeholder="Item name here"/> <!-- create a two way binding for newItem -->
+                        <button v-on:click="addItem" type="submit">Add item</button> <!-- call method addItem on click -->
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <hr/>
-    <div id="exercise6">
-        <h3 v-on:click="isOpen = !isOpen">Exercise 6 - Shopping list</h3><!-- toggle value of isOpen variable-->
-        <div v-show="isOpen"><!-- show if isOpen is true-->
-            <p>Create a simple shopping list where:</p>
-            <ul>
-                <li>user can add items</li>
-                <li>items are listed in an unordered list or table</li>
-            </ul>
-            <div class="bordered">
-                <h4>Shopping list</h4>
-                <ul>
-                    <li v-for="item in items">{{ item }}</li><!-- loop through items array. Item is the iterator variable (current item) -->
-                </ul>
-                <input v-model="newItem" id="name" type="text" placeholder="Item name here"/> <!-- create a two way binding for newItem -->
-                <button v-on:click="addItem" type="submit">Add item</button> <!-- call method addItem on click -->
-            </div>
-        </div>
-    </div>
-    <footer>&copy; Meija Lohiniva Laurea UAS</footer>
-    <!-- 1. Vue.js added here -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="R0333-ws1_solutions.js"></script>
-</body>
+        <footer>&copy; Meija Lohiniva Laurea UAS</footer>
+        <!-- 1. Vue.js added here -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="R0333-ws1_solutions.js"></script>
+    </body>
+</html>
