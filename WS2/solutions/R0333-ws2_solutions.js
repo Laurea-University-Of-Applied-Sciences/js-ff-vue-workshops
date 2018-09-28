@@ -90,8 +90,8 @@ var exercise1 = new Vue({
         enter: '' // this property holds the text Enter clicked if enter has been clicked
     },
     methods: {
-        handleKeydown: function() { // user presses a key down (if a user holds down a key, keydown is triggered repeatedly but keyup only once)
-            this.keyCount = this.text.length; // check the length of the text in input and update the length
+        handleKeydown: function(event) { // user presses a key down (if a user holds down a key, keydown is triggered repeatedly but keyup only once)
+            this.keyCount = event.target.value.length; // check the length of the text in input and update the length
         },
         enterClicked: function() { // user clicks enter 
             this.enter = "Enter clicked"; // update the text in a span

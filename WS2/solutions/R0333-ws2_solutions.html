@@ -24,7 +24,7 @@
                     <li>when enter is clicked, add a text "Enter clicked" into the enter span below.</li>
                 </ul>
                 <div class="bordered"> 
-                    <textarea @keyDown="handleKeydown()" v-model="text" @keyup.enter="enterClicked"></textarea>
+                    <textarea @keyup="handleKeydown($event)" v-model="text" @keyup.enter="enterClicked"></textarea> <!-- Binding values only happens after keydown method is called. To prevent this you can pass a special variable $event to be able to access the dom element itself --> 
                     <span id="count">{{ keyCount }}</span>
                     <p><span id="enter">{{ enter }}</span></p>
                 </div>
